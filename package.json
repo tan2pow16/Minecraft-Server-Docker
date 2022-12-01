@@ -1,0 +1,12 @@
+{
+  "name": "vanilla-mc-server-docker",
+  "author": {
+    "name": "tan2pow16",
+    "url": "https://github.com/tan2pow16"
+  },
+  "main": "main.js",
+  "engines": {
+    "node": "^12.22.12"
+  },
+  "description": "Simple tool for creating and running vanilla Minecraft servers in a Docker/Podman container."
+}

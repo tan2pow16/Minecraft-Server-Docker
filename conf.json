@@ -1,0 +1,11 @@
+{
+  "mc-version": "1.16.5",
+  "build-tag": "mc-vanilla-server:build-1.16.5",
+  "jdk-image": "openjdk:8-jre-alpine",
+  "container-name": "mc-server-new",
+  "rootless": "gameserver:1024",
+  "instance-data-dir": "/home/privsep/workspace/minecraft-server",
+  "server-port": "25565",
+  "memory": "1024M",
+  "selinux": true
+}
