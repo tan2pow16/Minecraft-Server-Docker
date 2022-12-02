@@ -4,6 +4,7 @@
     "name": "tan2pow16",
     "url": "https://github.com/tan2pow16"
   },
+  "version": "1.0.1",
   "main": "main.js",
   "engines": {
     "node": "^12.22.12"

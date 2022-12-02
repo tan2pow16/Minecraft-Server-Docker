@@ -3,6 +3,7 @@
 const child_process = require('child_process');
 const fs = require('fs');
 const https = require('https');
+const _module_info = require('./package.json');
 
 function default_conf()
 {
@@ -107,7 +108,7 @@ function get_server_jar_url(version)
 
 function help(conf)
 {
-  console.log(`Minecraft Rootless Docker Operator v${globalThis.version}`);
+  console.log(`Minecraft Rootless Docker Operator v${_module_info.version}`);
   console.log(' https://github.com/tan2pow16/minecraft-server-docker');
   console.log(' Copyright (c) 2022, tan2pow16. All rights reserved.');
   console.log('');
@@ -218,6 +219,7 @@ function create(conf)
 
   let setup_proc = child_process.spawnSync('docker', [
     'create',
+    '-i',
     '--name', `${conf['container-name']}`,
     '-p', `${conf['server-port']}:${conf['server-port']}`,
     '-v', `${conf['instance-data-dir']}:/data/instance:z`,
@@ -488,8 +490,6 @@ function __main__(argv)
   {
     return;
   }
-
-  globalThis.version = '1.0.0';
 
   let commands = {};
   commands['help'] = help;
