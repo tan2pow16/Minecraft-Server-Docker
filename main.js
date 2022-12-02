@@ -219,7 +219,7 @@ function create(conf)
 
   let setup_proc = child_process.spawnSync('docker', [
     'create',
-    '-i',
+    '-it',
     '--name', `${conf['container-name']}`,
     '-p', `${conf['server-port']}:${conf['server-port']}`,
     '-v', `${conf['instance-data-dir']}:/data/instance:z`,
@@ -431,6 +431,7 @@ function shell(conf)
   let shell_proc = child_process.spawnSync('docker', [
     'exec',
     '-itu', 'root',
+    // '-e', 'PS1=[\\u@\\h \\W]\\$ ',
     `${conf['container-name']}`,
     '/bin/sh'
   ], {
